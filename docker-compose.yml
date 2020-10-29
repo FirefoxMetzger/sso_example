@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+    vouch:
+        image: voucher/vouch-proxy
+        volumes:
+            - ./vouch/config/config.yml:/config/config.yml
+    
+    nginx:
+        image: nginx
+        depends_on: 
+            - vouch
+        volumes:
+            - ./nginx/conf.d/:/etc/nginx/conf.d/
+            - ./web/:/usr/share/nginx/html/
+            - ./cert/:/certs
+        ports:
+            - 443:443
+            - 80:80
