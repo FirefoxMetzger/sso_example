@@ -1,4 +1,4 @@
-# SOO Example
+# SSO Example
 
 This repo contains the final configuration files for setting up SSO with Auth0, nginx, and vouch-proxy. It is meant to be run inside docker.
 
